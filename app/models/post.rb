@@ -10,7 +10,7 @@ class Post < ApplicationRecord
     VALID_TEXT = [/Won't Believe/i, /Secret/i, /Top \d/i, /Guess/i]
     
     def is_click_bait
-        if VALID_TEXT.none? { |pat| pat.match title }
+        if VALID_TEXT.none? { |text| text.match title }
             errors.add(:title, "Title is not clickbait")
         end
     end
